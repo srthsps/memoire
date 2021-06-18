@@ -1,0 +1,117 @@
+*{
+    margin: 0;;
+}
+
+.outerDiv{
+    display: flex;
+    flex-direction: column;
+    background-color:#999;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.titleDiv{
+    background-color:darkorchid;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 5px 15px;
+}
+
+.content{
+    
+    padding: 50px;
+    display: flex;
+    border: 5px;
+}
+.register{
+    color: azure;
+    background-color:darkslateblue;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 20px 20px 50px 10px #111 inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.register:hover{
+    transform: scale(1.02);
+}
+
+.login:hover{
+    transform: scale(1.02);
+}
+
+.login{
+    color: azure;
+    background-color: darkmagenta;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 20px 20px 50px 10px #111 inset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.register_input{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.register_input>input{
+    padding: 10px;
+    width: 250px;
+    border: none;
+    margin: 5px;
+    outline: none;
+}
+
+.login_input{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.login_input>input{
+    padding: 10px;
+    width: 250px;
+    border: none;
+    margin: 5px;
+    outline: none;
+}
+
+.register_button,.login_button,.google_login{
+    padding: 5px;
+    width: 250px;
+    align-items: baseline;
+    
+}
+
+.register_button>input,.login_button>input,.google_login>button{
+    width:100%;
+    padding: 8px;
+
+}
+
+.register_button>input:hover,.login_button>input:hover,.google_login>button:hover{
+    transform: translateY(1.5px);
+}
+
+.reg_response{
+    padding-top: 10px;
+}
+.login_status{
+    margin-bottom: 10px;
+    font-size: 14pt;
+}
+
+.temp_logout{
+    width: 90px;
+    height: 30px;
+}

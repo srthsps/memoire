@@ -1,0 +1,51 @@
+.getMemories{
+    background-color:#111;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 5px 15px;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.memoryElement{
+    background-color: #998;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 5px 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-width: 30%;
+    flex-basis: 30%;
+    overflow-wrap: anywhere;
+    justify-content: space-between;
+}
+
+.memoryElement:hover{
+    transform: translateY(1.4px);
+}
+
+.name{
+    text-align:right;
+    font-size: 1.2rem;
+    padding-top: 5px;
+}
+
+.memHead{
+    background-color: #999;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px;
+    text-align: center;
+    font-size: 1.5rem;
+
+}
+
+.memory{
+    font-style: italic;
+    font-weight: 600;
+}
