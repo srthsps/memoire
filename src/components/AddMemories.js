@@ -2,7 +2,7 @@ import React from 'react'
 import './AddMemories.css'
 import axios from 'axios'
 
-const AddMemories = ({name,memory,setName,setMemory,counter,setCounter}) => {
+const AddMemories = ({name,memory,setName,setMemory,counter,setCounter,isauth}) => {
 
     const addMemory=()=>{
         console.log(name);

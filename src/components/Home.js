@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 import AddMemories from './AddMemories'
 import GetMemories from './GetMemories'
 
-const Home = () => {
+const Home = ({isauth,logout,user}) => {
 
     const [name,setName]=useState("")
     const [memory,setMemory]=useState("")
@@ -22,7 +22,11 @@ const Home = () => {
                         Savour the Moments
                     </h1>
                 </div>
-            <AddMemories name={name} memory={memory} setName={setName} setMemory={setMemory} counter={counter} setCounter={setCounter} />
+                <div className="isauth">
+                    <p>{isauth? "Logged in" : "Not Loggede in"}</p>
+                    <button className="logout" onClick={()=>logout()}>Logout</button>
+                </div>
+            <AddMemories name={name} isauth={isauth} memory={memory} setName={setName} setMemory={setMemory} counter={counter} setCounter={setCounter} />
             <GetMemories memories={memories} setMemories={setMemories} counter={counter} setCounter={setCounter}/>
         </div>
     )

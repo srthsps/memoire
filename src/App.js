@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom
 import axios from 'axios'
 import {useAuth0} from '@auth0/auth0-react'
 import Home from './components/Home'
+import { render } from 'react-dom'
+import ReactDOM from 'react-dom';
 
 const App = () => {
 
@@ -18,6 +20,15 @@ const App = () => {
     const {loginWithRedirect,logout,user,isAuthenticated} = useAuth0()
 
 
+    const check = () =>{
+        ReactDOM.render(
+            <Home isauth={isAuthenticated} logout={logout} user={user}/>,document.getElementById('root')
+        )
+    }
+
+    if(isAuthenticated){
+        check()
+    }
 
     const Register = () =>{
        const data = {
@@ -36,6 +47,10 @@ const App = () => {
         
     }
 
+
+   
+    
+
     const Login = () =>{
         const data = {
             username : loginuser,
@@ -48,6 +63,13 @@ const App = () => {
             setLoginuser("")
             setLoginpassword("")
             setRegResponse("")
+            if(res.data!=="Incorrect password"){
+            if(res.data!=="Unknown user"){
+                check()
+            }
+            
+            }
+            
         })
     }
 
@@ -59,11 +81,6 @@ const App = () => {
             <div className="titleDiv">
                 <h1 className="title">Welcome to Memoire</h1>
             </div>
-            <Router>
-                <Switch>
-                <Route path="/home" component={Home} />
-                </Switch>
-            </Router>
             <div className="content">
                 <div className="register">
                     <div className="register_head">
@@ -94,12 +111,12 @@ const App = () => {
                 <div className="tmp_div">
 
                 <p className="login_status">
-                    {isAuthenticated ? "Logged in" : "Not Logged in"}
+                    {isAuthenticated ? "Logged in" && (<button className="temp_logout" onClick={logout}>
+                        Logout
+                    </button>) : "Not Logged in"}
                 </p>
                 <br/>
-                <button className="temp_logout" onClick={logout}>
-                        Logout
-                    </button>
+                
                     </div>
 
 
