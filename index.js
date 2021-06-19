@@ -86,7 +86,7 @@ app.post("/login",async(req,res)=>{
     const user = await User.find({username:username})   
     if(user.length==0){
         console.log("Login failed")
-        res.send("User doesn't Exist")
+        res.send("Unknown user")
     }
     else{
         console.log("Login Success")
@@ -94,7 +94,7 @@ app.post("/login",async(req,res)=>{
         console.log(db_password);
         bcrypt.compare(password,db_password).then(results=>{
             if(!results){
-                res.send("Incorrect Password");
+                res.send("Incorrect password");
             }
             else{
                 
